@@ -26,7 +26,7 @@ The repository includes the following :
 
 Readme for project explaination and how to import the database and run the code 
 
-Report.pdf —> Full detailed project report 
+Report_ .pdf —> Full detailed project report with ER diagram the old version that should be deleted is Report.pdf without underscore, it didnt contain ER diagram  
 
 SQL ——> includes the full project code 
 
