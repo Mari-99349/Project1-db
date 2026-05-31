@@ -232,14 +232,14 @@ FOR EACH ROW
 BEGIN
     DECLARE new_total DECIMAL(10,2);
 
-    -- إعادة حساب إجمالي كل الوصفة من الصفر
+    --
     SELECT COALESCE(SUM(m.price * pd.quantity), 0)
     INTO new_total
     FROM PRESCRIPTION_DETAILS pd
     JOIN MEDICINE m ON m.medicine_id = pd.medicine_id
     WHERE pd.prescription_id = NEW.prescription_id;
 
-    -- تحديث الفاتورة المرتبطة بالوصفة
+    
     UPDATE Bill
     SET total = new_total
     WHERE prescription_id = NEW.prescription_id;
@@ -250,33 +250,33 @@ DELIMITER ;
 
 -- Testing Queries - Check system functionality
 
--- 1) عرض بيانات أساسية
+-- 1) 
 SELECT * FROM MEDICINE LIMIT 5;
 SELECT * FROM DISEASE LIMIT 5;
 SELECT * FROM DOCTOR LIMIT 5;
 
--- 2) عرض الوصفات والتفاصيل
+-- 2) 
 SELECT * FROM Prescription;
 SELECT * FROM Prescription_Details;
 
--- 3) عرض الفواتير قبل التعديل
+-- 3) 
 SELECT * FROM Bill;
 
--- 4) اختبار التريجر (إضافة عنصر جديد لوصفة 1)
+-- 4) 
 INSERT INTO Prescription_Details (prescription_id, medicine_id, quantity)
 VALUES (1, 3, 2);
 
--- 5) عرض الفاتورة بعد التحديث
+-- 5) 
 SELECT * FROM Bill WHERE prescription_id = 1;
 
--- 6) الحساب الصحيح للمقارنة
+-- 6) 
 SELECT 
     SUM(m.price * pd.quantity) AS correct_total
 FROM Prescription_Details pd
 JOIN MEDICINE m ON m.medicine_id = pd.medicine_id
 WHERE pd.prescription_id = 1;
 
--- 7) مقارنة نهائية
+-- 7) 
 SELECT * FROM Bill WHERE prescription_id = 1;
 
 -- =========================================================================
