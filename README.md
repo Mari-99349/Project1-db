@@ -16,6 +16,8 @@ A set of testing and analytical queries is also included to verify the correctne
 relationships, and system functionality.
 
 
+
+
 --- Repository structure ----
 
 You will find all the files needed in the main under the repository name “project1-db”
@@ -37,6 +39,10 @@ Triggers ——> the triggers we added for the code insert into
 Queries ——> the queries that answers the project’s questions 
 
 You will also find Final_medicine inventory management system.SQL it should have been deleted.
+
+
+
+
 
 
 ----- How to run the code through mysql workbench ----
