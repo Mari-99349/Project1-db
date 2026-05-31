@@ -38,7 +38,13 @@ Triggers ——> the triggers we added for the code insert into
 
 Queries ——> the queries that answers the project’s questions 
 
-You will also find Final_medicine inventory management system.SQL it should have been deleted.
+ppt -----> Power point explaination for the project 
+
+Youtube Videolink----> video explaination for project 
+
+Contribution Form ----> each member's contribution 
+
+You will also find Final_medicine inventory management system.SQL it should have been deleted, you can ignore it's just a copy from the code.
 
 
 
